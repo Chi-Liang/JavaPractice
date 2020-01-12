@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function myFunction() {
+		var x=0;
+		var y=0;
+		var text="";
+		var filedA = "A";
+		var filedB = "B";
+		var returnFlag1 = false;
+		var returnFlag2 = false;
+		x = parseInt(document.getElementById("numb1").value);
+		y = parseInt(document.getElementById("numb2").value);
+		
+		returnFlag1 = check(x,filedA);
+		returnFlag2 = check(y,filedB);
+		
+		if(returnFlag1 && returnFlag2){
+			text = "Input OK";
+			document.getElementById("demo1").innerHTML=text;
+		}
+	}
+	
+function check(num,fieldName){
+	var returnFlag = false;
+	var text = "";
+	if(isNaN(num)){
+		text = "A 或 B 請輸入數字";
+		clearAndFocusField();
+		document.getElementById("demo2").innerHTML=text;
+	}else if(num < 1 || num > 10){
+		text = "A 或 B 必須介於1~9";
+		clearAndFocusField();
+		document.getElementById("demo3").innerHTML=text;
+	}else{
+		returnFlag = true;
+	}
+	return returnFlag;
+}
+
+function clearAndFocusField(){
+	document.getElementById("numb1").value = "";
+	document.getElementById("numb2").value = "";
+	document.getElementById("numb1").focus();
+	document.getElementById("demo1").innerHTML = "";
+	document.getElementById("demo2").innerHTML = "";
+	document.getElementById("demo3").innerHTML = "";
+}
+
+</script>
+</head>
+<body>
+	數字A:<input id="numb1" type="text" autofocus="autofocus">
+	</br>
+	</br>
+	數字B:<input id="numb2" type="text">
+	</br>
+	</br>
+	<button type="button" onclick="myFunction();">aaa</button>
+	<p id="demo1"></p>
+	<p id="demo2"></p>
+	<p id="demo3"></p>
+	
+</body>
+</html>

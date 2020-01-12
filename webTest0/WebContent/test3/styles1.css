@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+.p03{
+	font-size: 100px;
+	font-style: italic;
+	font-weight: bold;
+	font-family: PMingLiU, Microsoft JhengHei;
+	border: 3px solid blue;
+	background-color: #298429;
+}

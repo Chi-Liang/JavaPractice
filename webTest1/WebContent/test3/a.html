@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+
+function aa(){
+	var d = new Date();
+	var d_time = d.getTime();
+	console.log(d_time);
+	
+	for(var i=0;i<100000;i++){
+		//console.log(i);
+	}
+	
+	var d1 = new Date();
+	var d1_time = d1.getTime();
+	console.log("****: "+d1_time);
+
+	var total = parseInt(d1_time)-parseInt(d_time);
+	
+	console.log("花了多少時間(亳秒)****: "+ total);
+}
+
+</script>
+</head>
+<body onload="aa();">
+
+</body>
+</html>

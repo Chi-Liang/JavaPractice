@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function myFunction(){
+	var x = "";
+	var y = "";
+	var text ="";
+	var returnFlag1 = false;
+	var returnFlag2 = false;
+	
+	x = document.getElementById("num1").value;
+    y = document.getElementById("num2").value;
+	
+    returnFlag1 = check(x);
+    returnFlag2 = check(y);
+    
+	if(returnFlag1 && returnFlag2){
+		text = "Input OK";
+		clearAndFocusField();
+		document.getElementById("demo1").innerHTML=text;
+	}
+}
+
+function check(num){
+	var returnFlag = false;
+	
+	if( num =="" || isNaN(num)){
+		text = "input a num";
+		clearAndFocusField();
+		document.getElementById("demo2").innerHTML=text;
+	}else if(parseInt(num) < 1 || parseInt(num) > 10){
+		text = "between 1 to 10";
+		clearAndFocusField();
+		document.getElementById("demo3").innerHTML=text;
+	}else{
+		returnFlag = true;
+	}
+	return returnFlag ;
+}
+
+function clearAndFocusField(){
+	document.getElementById("num1").value="";
+	document.getElementById("num2").value="";
+	document.getElementById("num2").focus();
+	document.getElementById("demo1").innerHTML="";
+	document.getElementById("demo2").innerHTML="";
+	document.getElementById("demo3").innerHTML="";
+}
+
+
+</script>
+</head>
+<body>
+numA:<input  id="num1" type="text" autofocus="autofocus"></br></br>
+numB:<input  id="num2" type="text" ></br></br>
+<button type="button" onclick="myFunction();">click me</button>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+</body>
+</html>

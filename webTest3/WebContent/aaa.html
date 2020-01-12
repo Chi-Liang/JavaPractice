@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<p id="demo"></p>
+
+<script>
+var w = window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
+console.log("window.innerWidth "+window.innerWidth);
+console.log("document.documentElement.clientWidth "+document.documentElement.clientWidth);
+console.log("document.body.clientWidth "+document.body.clientWidth);
+
+var h = window.innerHeight
+|| document.documentElement.clientHeight
+|| document.body.clientHeight;
+console.log("window.innerHeight "+window.innerHeight);
+console.log("document.documentElement.clientHeight "+document.documentElement.clientHeight);
+console.log("document.body.clientHeight "+document.body.clientHeight);
+
+var x = document.getElementById("demo");
+x.innerHTML = "Browser inner window width: " + w + ", height: " + h + ".";
+</script>
+</body>
+</html>

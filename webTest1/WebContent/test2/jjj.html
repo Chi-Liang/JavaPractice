@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var fruits_org=["Banana","Orange","Apple","Mango"];
+var fruits=["Banana","Orange","Apple","Mango"];
+function aaa(){
+	document.getElementById("demo1").innerHTML=fruits_org;
+	//fruits.pop();
+	//document.getElementById("demo2").innerHTML=fruits;
+	//fruits.shift();
+	//document.getElementById("demo2").innerHTML=fruits;
+	//fruits.unshift("Lemon");
+	console.log(fruits.unshift("Lemon"));
+	document.getElementById("demo2").innerHTML=fruits;
+	
+}
+</script>
+</head>
+<body>
+<button onclick="aaa();">click me</button>
+<p id="demo1"></p>
+<p id="demo2"></p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function aaa(){
+	var d = new Date();
+	var d_time = d.getTime();
+	for(var i=0;i<1000000000;i++){
+		
+	}
+	var d1 = new Date();
+	var d1_time = d1.getTime();
+	
+	var total = parseInt(d1_time)-parseInt(d_time);
+	console.log("total(millseconds):"+total);
+	
+}
+	
+</script>
+</head>
+<body onload="aaa();">
+
+</body>
+</html>

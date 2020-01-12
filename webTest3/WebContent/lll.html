@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function myFunction(x){
+	x.style.background="yellow";
+}
+
+function aaa(){
+	var sel = document.getElementById("xxx");
+	alert(sel.options[sel.selectedIndex].text);
+}
+</script>
+</head>
+<body>
+onfocus==> Enter your name:<input type="text" onfocus="myFunction(this);"><br>
+onclick==> Enter your name:<input type="text" onclick="myFunction(this);"><br>
+
+<select id="xxx" onchange="aaa();">
+	<option>中文</option>
+	<option>英文</option>
+	<option>泰文</option>
+</select>
+
+</body>
+</html>

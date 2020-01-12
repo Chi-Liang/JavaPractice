@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function testAlert(){
+	var date1=Date();
+	alert(document.getElementsByName('test2')[0].value);
+/*	alert(date1);
+	document.getElementById('test1').innerHTML=date1;
+	var test2=document.getElementById('test1');
+	//test2.insertAdjacentHTML('beforeend',"zzzzzzzz");
+	alert(test2.innerHTML);
+	var test3=test2.innerHTML+"aaaaaaaaa";
+	document.getElementById('test1').innerHTML=test3;
+*/	
+}
+    
+
+</script>
+
+</head>
+<body>
+
+<button onclick="testAlert();">按我</button>
+<!--<p id="test1">rrrrrrr</p>-->
+<input type="text" id="test1" name="test2" size="20" maxlength="3" value="abc">
+<input type="text" id="test1" name="test2" size="20" maxlength="3" value="xyz">
+
+</body>
+</html>

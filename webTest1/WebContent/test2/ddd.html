@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function aaa(){
+	if(typeof "aaa"=='string' ){
+		console.log("1111111");
+	}
+	var person = {firstName:"John" ,lastName:"Doe"}
+	person = undefined;
+	if(person==undefined){
+		console.log("ERROR");
+	}else if(person!=undefined){
+		console.log("CORRECT");
+	}
+	
+}
+</script>
+</head>
+<body>
+<button onclick="aaa();">click me</button>
+</body>
+</html>

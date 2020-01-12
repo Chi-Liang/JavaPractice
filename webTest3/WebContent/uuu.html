@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function aaa(){
+	var parent = document.getElementById("demo");
+	var child = document.getElementById("p1");
+	parent.removeChild(child);
+}
+</script>
+</head>
+<body onload="aaa();">
+<div id="demo">
+	<p id="p1">one</p>
+	<p id="p2">two</p>
+</div>
+</body>
+</html>

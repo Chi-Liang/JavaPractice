@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var items1 = [
+	["茶","tea"],
+	["冰","ice"],
+	["量","cup"],
+];
+
+var items2 = [
+	["奶茶","milk tea"],
+	["紅茶","red tea"],
+	["綠茶","green tea"],
+];
+
+var items3 = [
+	["多冰","large ice"],
+	["少冰","little ice"],
+	["去冰","not ice"],
+];
+
+var items4 = [
+	["大杯","big cup"],
+	["中杯","middle cup"],
+	["小杯","small cup"],
+];
+
+function initOption(){
+	initOption1(items1,"type1Id");
+	initOption1(items2,"type2Id");
+}
+
+function initOption1(items,typeId){
+	let obj = document.getElementById(typeId);
+	for ( let val in items) {
+		console.log(val);
+		obj.add(new Option(items[val][0],items[val][1]));
+	}
+}
+
+function removeAll(){
+	var obj = document.getElementById("type2Id");
+	obj.options.length = 0;
+}
+
+function printValue(){
+	removeAll();
+	let typeId = document.getElementById("type1Id").value;
+	
+	switch (typeId) {
+		case "tea":
+			initOption1(items2, "type2Id");
+			break;
+		case "ice":
+			initOption1(items3, "type2Id");
+			break;
+		case "cup":
+			initOption1(items4, "type2Id");
+			break;
+		}
+
+	}
+</script>
+</head>
+<body onload="initOption();">
+<div style="margin: 30px;float: left;">
+	<select name="type1Name" id="type1Id" style="font-size: 26px;" size="3" onchange="printValue();">
+	</select>
+</div>
+<div style="margin: 30px;float: left;">
+	<select name="type2Name" id="type2Id" size="3" style="font-size: 26px;">
+	</select>
+</div>
+</body>
+</html>

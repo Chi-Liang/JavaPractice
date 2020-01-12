@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function aaa() {
+	var text = "";
+	if(confirm("Press a button")){
+		text = "You pressed Ok";
+	}else{
+		text = "You pressed Cancel";
+	}
+	document.getElementById("demo").innerHTML=text;
+}
+
+</script>
+</head>
+<body>
+<button onclick="aaa();"">click me</button>
+<p id="demo"></p>
+</body>
+</html>

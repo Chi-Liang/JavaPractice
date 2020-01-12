@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+	margin-bottom: 100px;
+	font-size: xx-large;
+}
+button {
+	background-color: red;
+	font-size: 20px;
+	height: 50px;
+}
+</style>
+<script type="text/javascript">
+function aaa(val){
+	document.getElementById("demo").style.display=val;
+}
+</script>
+</head>
+<body>
+<div id="demo" >JavaScript can hide HTML elements</div>
+<button onclick="aaa('block');">Click me</button>
+<button onclick="aaa('none');">Click me</button>
+</body>
+</html>

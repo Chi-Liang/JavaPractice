@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+BUTTON{
+	background-color: red;
+	font-size: 20px;
+	height: 50px;
+}
+</style>
+<script type="text/javascript">
+function aaa(gitVal){
+	document.getElementById("myImage").src=gitVal;
+	
+}
+
+</script>
+</head>
+<body>
+<BUTTON onclick="aaa('pic_bulbon.gif');">Turn on the light</BUTTON>
+<img id="myImage" src="pic_bulboff.gif">
+<BUTTON onclick="aaa('pic_bulboff.gif');">Turn off the light</BUTTON>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function aaa(){
+	var x = document.getElementById("myBtn");
+	var y = document.getElementById("demo");
+	
+	x.addEventListener("click",function(){
+		y.innerHTML += "Clicked!<br>";
+	});
+	
+	x.addEventListener("mouseover",function(){
+		y.innerHTML += "mouseover!<br>";
+	});
+	
+	x.addEventListener("mouseout",function(){
+		y.innerHTML += "mouseout!<br>";
+	});
+}
+</script>
+</head>
+<body onload="aaa();">
+<button id="myBtn">click me</button>
+<p id="demo"></p>
+</body>
+</html>

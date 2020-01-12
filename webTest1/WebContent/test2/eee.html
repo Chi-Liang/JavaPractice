@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var count=0;
+function aaa(){
+	count++;
+	var div1 = document.createElement("div");
+	div1.setAttribute("id","newDiv"+count);
+	div1.innerHTML="xxx";
+	document.getElementById('bbb').appendChild(div1);
+	
+}
+</script>
+</head>
+<body>
+<button onclick="aaa();">按我新增一個div</button>
+<div id="bbb"></div>
+</body>
+</html>

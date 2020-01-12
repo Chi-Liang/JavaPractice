@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/* DivTable.com */
+.divTable{
+	display: table;
+	width: 500px;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	border: 1px solid #999999;
+	display: table-cell;
+	padding: 3px 10px;
+	height:20px;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
+}
+</style>
+<script type="text/javascript">
+function myFunction(end){
+	for (var i = 0; i < end; i++) {
+		var para = document.createElement("div");
+		para.setAttribute("class","divTableRow");
+		
+		var para1 = document.createElement("div");
+		para1.setAttribute("class","divTableCell");
+		
+		var para2 = document.createElement("div");
+		para2.setAttribute("class","divTableCell");
+		
+		para.appendChild(para1);
+		para.appendChild(para2);
+		
+		document.getElementById("myTable").appendChild(para);
+	}
+}
+
+function init(end){
+	myFunction(end);
+}
+</script>
+</head>
+<body onload="init(3);">
+	<div class="divTable">
+		<div id="myTable" class="divTableBody">
+		
+		</div>
+	</div>
+<p>
+<p>	
+<button onclick="myFunction(1);">新增</button>
+</body>
+</html>

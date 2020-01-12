@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var obj1 = { a: 10, b: 20, c: 30 };
+var obj2 = obj1;
+obj2.b = 100;
+console.log(obj1==obj2);
+console.log(obj1); // { a: 10, b: 100, c: 30 } <-- b 被改到了
+console.log(obj2); // { a: 10, b: 100, c: 30 }
+</script>
+</head>
+<body>
+
+</body>
+</html>

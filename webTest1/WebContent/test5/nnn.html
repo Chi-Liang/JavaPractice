@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function getUrlVars() {
+	debugger;
+    var vars = {};
+    var ch1Arr = [];
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        var value1 = decodeURIComponent(value);
+    	if(key=="ch1"){
+    		ch1Arr.push(value1);
+    	}else{
+    		vars[key] = value1;
+    	}
+    });
+    console.log(vars.myname);
+    console.log(vars.passwd);
+    console.log(vars.sex);
+    console.log(ch1Arr.join());
+    
+}
+</script>
+</head>
+<body onload="getUrlVars();">
+
+</body>
+</html>

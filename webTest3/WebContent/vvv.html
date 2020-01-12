@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function aaa(){
+	var parent = document.getElementById("demo");
+	var child = document.getElementById("p1");
+	
+	var para = document.createElement("p");
+	var node = document.createTextNode("This is new.xxx");
+	para.appendChild(node);
+	parent.replaceChild(para,child);
+}
+function bbb(){
+	document.getElementById("button1").disabled=true;
+}	
+</script>
+</head>
+<body>
+<div id="demo">
+	<p id="p1">one</p>
+</div>
+<button id="button1" onclick="aaa();document.getElementById('button1').disabled=true;alert('111111111');">alert</button>
+</body>
+</html>

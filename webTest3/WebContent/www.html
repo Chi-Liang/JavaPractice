@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function aaa(){
+	var myCollection = document.getElementsByTagName("p"); 
+	var xx = "xxxxxxxxx";
+	document.getElementById("demo").innerHTML=xx+myCollection[1].innerHTML;
+}
+</script>
+</head>
+<body>
+<p>one</p>
+<p>two</p>
+<p id="demo"></p>
+<button onclick="aaa();">click me</button>
+</body>
+</html>

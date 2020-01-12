@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table,td{
+	border:1px solid black;
+} 
+</style>
+<script type="text/javascript">
+function myFunction(){
+	var table = document.getElementById("myTable");
+	var num = document.getElementById("myTable").rows.length;
+	var row = table.insertRow(num);
+	
+	var cell1 = row.insertCell(0);
+	var cell2 = row.insertCell(1);
+	cell1.innerHTML = "NEW CELL1";
+	cell2.innerHTML = "NEW CELL2";
+}
+</script>
+</head>
+<body>
+<table id="myTable">
+	<tr>
+		<td>row1 cell1</td>
+		<td>row2 cell2</td>
+	</tr>
+	<tr>
+		<td>row1 cell1</td>
+		<td>row2 cell2</td>
+	</tr>
+	<tr>
+		<td>row1 cell1</td>
+		<td>row2 cell2</td>
+	</tr>
+</table>
+</body>
+<br>
+<button onclick="myFunction();">click me</button>
+</html>

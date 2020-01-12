@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var obj1 = { body: { a: 10 } };
+var obj2 = JSON.parse(JSON.stringify(obj1));
+obj2.body.a = 20;
+
+console.log(obj1); // { body: { a: 10 } } <-- 沒被改到
+console.log(obj2); // { body: { a: 20 } }
+console.log(obj1 === obj2); // false
+console.log(obj1.body === obj2.body); // false
+
+var obj4 = { a: 10, b: 20, c: 30 };
+var obj3 = {};
+obj3.a = obj4.a;
+obj3.b = obj4.b;
+obj3.c = obj4.c;
+obj3.a = 40;
+console.log(obj4 == obj3);
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

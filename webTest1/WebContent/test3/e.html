@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function bbb(){
+	var email = document.getElementById("aaa").value;
+	var result = validateEmail(email);
+	if(result){
+		alert("success");
+	}else{
+		alert("fail");
+	}
+}
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+</script>
+</head>
+<body>
+<input type="email" id="aaa"/>
+<button onclick="bbb();">email</button>
+
+
+</body>
+</html>

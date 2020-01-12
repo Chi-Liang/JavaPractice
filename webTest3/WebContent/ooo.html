@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function aaa(){
+	var regExp = /^[a-zA-Z]+$/;
+	var xx = document.getElementById("a1").value;
+	if(!regExp.test(xx)){
+		alert("請輸入英文");
+	}
+}
+
+function bbb(){
+	var regExp = /^[\d]+$/;
+	var xx = document.getElementById("a2").value;
+	if(!regExp.test(xx)){
+		alert("請輸入數字");
+	}
+}
+
+function ccc(){
+	var regExp = /^[\d]+$/;
+	var xx = document.getElementById("a3").value;
+	if(!regExp.test(xx)){
+		alert("請輸入數字");
+	}
+}
+
+</script>
+</head>
+<body>
+name:<input type="text" id="a1" onblur="aaa();"><br>
+id:<input type="text" id="a2" onblur="bbb();"><br>
+birthday:<input type="text" id="a3" onblur="ccc();">
+</body>
+</html>

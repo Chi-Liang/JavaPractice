@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function aaa(){
+	var car;
+	var car1 = ["aa","bb"];
+	var car2 = new String("cc");
+	console.log(typeof "aaa");
+	console.log(typeof new String("12"));
+	console.log(typeof 12);
+	console.log(typeof true);
+	console.log(typeof car);
+	console.log(typeof car1);
+	console.log(typeof function(){});
+	console.log(typeof car2);
+	var cars = ["Saab", "Volvo", "BMW"];
+	var type = {a:"aa",b:"bb"};
+	console.log(cars instanceof Array);          
+	console.log(cars instanceof Object);         
+	console.log(cars instanceof String);         
+	console.log(cars instanceof Number);         
+	console.log(new Number(12) instanceof Number);         
+	console.log(new String("12") instanceof String);         
+	console.log("12" instanceof String);         
+	console.log(type instanceof Object);         
+	
+	
+}
+</script>
+</head>
+<body onload="aaa();">
+
+</body>
+</html>

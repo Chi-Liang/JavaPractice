@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="library/utils.js"></script>
+<style type="text/css">
+/* DivTable.com */
+.divTable{
+	display: table;
+	width: 500px;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	border: 1px solid #999999;
+	display: table-cell;
+	padding: 3px 10px;
+	height:20px;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
+}
+</style>
+<script type="text/javascript">
+var num = 0;
+var num1 = [];
+var text11 = "";
+function myFunction(end){
+	var text1 = "";
+	for (var i = 0; i < end; i++) {
+		
+		var text1 = end==1?"":makeid(8);
+		var text2 = end==1?"":makeid(8);
+		var para = document.createElement("div");
+		para.setAttribute("class","divTableRow");
+		para.setAttribute("id","a"+num);
+		
+		var para1 = document.createElement("div");
+		para1.setAttribute("class","divTableCell");
+		var b1 = document.createElement("input");		
+		b1.setAttribute("type","text");
+		b1.setAttribute("id","b"+num);
+		b1.setAttribute("value",text1);
+		b1.setAttribute("size","10");
+		if(end==3){
+			b1.setAttribute("disabled","disabled");
+		}
+		para1.appendChild(b1);
+		
+		
+		var para2 = document.createElement("div");
+		para2.setAttribute("class","divTableCell");
+		var c1 = document.createElement("input");		
+		c1.setAttribute("type","text");
+		c1.setAttribute("id","c"+num);
+		c1.setAttribute("value",text2);
+		c1.setAttribute("size","10");	
+		if(end==3){
+			c1.setAttribute("disabled","disabled");
+		}	
+		para2.appendChild(c1);
+		
+		
+		var para3 = document.createElement("div");
+		para3.setAttribute("class","divTableCell");
+		
+		var para31 = document.createElement("button");
+		para31.setAttribute("onclick","aaa("+num+")");
+		
+		var para32 = document.createElement("button");
+		para32.setAttribute("onclick","modify("+num+")");
+		
+		var t = document.createTextNode("刪除");
+		para31.appendChild(t);
+		para3.appendChild(para31);
+		
+		var t1 = document.createTextNode("修改");
+		para32.appendChild(t1);
+		para3.appendChild(para32);
+		
+		para.appendChild(para1);
+		para.appendChild(para2);
+		para.appendChild(para3);
+		
+		document.getElementById("myTable").appendChild(para);
+		num++;
+	}
+}
+
+function modify(ii){
+	
+	for (var i = 0; i < num; i++) {
+		var bb = document.getElementById("b"+i);
+		var cc = document.getElementById("c"+i);
+		
+		if(bb==undefined && cc==undefined){
+			continue;
+		}
+		else if(ii == i){
+			bb.disabled=false;
+			cc.disabled=false;
+		}else if(ii!=i){
+			bb.disabled=true;
+			cc.disabled=true;
+		}
+	}
+}
+
+function aaa(i){
+	var el = document.getElementById("a"+i);
+	el.remove();
+	num1.push(i);
+}
+
+function init(end){
+	myFunction(end);
+}
+
+
+function save(){
+	text11 = "";
+	var validate = checkAll();
+	if(validate){
+		disableAll();
+	}else{
+		alert(text11);
+	}
+}	
+
+function checkAll(){
+	var validate = false;
+	var validateNum = 0;
+	for (var i = 0; i < num; i++) {
+		var bb = document.getElementById("b"+i);
+		var cc = document.getElementById("c"+i);
+		
+		if(bb==undefined && cc==undefined){
+			continue;
+		}else{
+			if(bb.value!="" && cc.value!=""){
+				continue;
+			}
+			if(bb.value ==""){
+				text11 += "Row:"+i+"Col:0\n"
+				validateNum++;
+			}
+			if(cc.value ==""){
+				text11 += "Row:"+i+"Col:1\n"
+				validateNum++;
+			}
+		}
+	}
+	if(validateNum==0){
+		validate = true;
+	}
+	return validate;
+}
+
+
+function disableAll() {
+		for (var i = 0; i < num; i++) {
+			var bb = document.getElementById("b" + i);
+			var cc = document.getElementById("c" + i);
+
+			if (bb == undefined && cc == undefined) {
+				continue;
+			} else {
+				bb.disabled = true;
+				cc.disabled = true;
+			}
+		}
+	}
+
+
+</script>
+</head>
+<body onload="init(3);">
+	<div class="divTable">
+		<div id="myTable" class="divTableBody">
+		
+		</div>
+	</div>
+<p>
+<p>	
+<button onclick="myFunction(1);">新增</button>
+<button onclick="save();">儲存</button>
+</body>
+</html>

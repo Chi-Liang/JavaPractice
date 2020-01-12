@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+if (!json.check) {
+}	
+else {
+    alert("此帳號已註冊過，請重新註冊! ");
+	return false;
+}	
+if (!json.checkLength) {
+}	
+else {
+        alert("密碼長度不得小於4個字，請重新註冊! ");
+		return false;
+}	
+if (!json.checkPassword) {	
+}
+else {
+        alert("會員密碼和確認密碼不相同，請重新註冊! ");
+		return false;
+}	
+if (!json.checkPhone) {	
+}
+else {
+                alert("此行動電話已註冊過，請重新輸入！")
+				return false;
+}	
+if (json.count) {	
+                
+                   
+                    var customId = '';
+                    if (json.customId != '') { //導首頁給session值
+                        customId = json.customId;
+                    }
+
+                    if (json.checkSms) { //導簡訊認證頁面
+                        window.location.href = "customLoginAction.do?method=smsConfirmForm&customId=" + customId;
+                    } else {
+                        //EMAIL註冊成功導首頁
+                        window.location.href = "customLoginAction.do?method=homePage&customId=" + customId;
+                    }
+                }
+            
+       
+     
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

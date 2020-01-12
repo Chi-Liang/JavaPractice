@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+var points = [{type:"aaa",year:2000},{type:"bbb",year:2005},{type:"ccc",year:2002}];
+var points1 = {type:"aaa",year:2000};
+var points2 = ["a","b","c"];
+function aaa(){
+	//fruits.sort();
+//	points.sort(function(a,b){return a-b});
+	/* alert(typeof points);
+	alert(points instanceof Array);
+	alert(points1 instanceof Array);
+	points.sort(function(a,b){return a.year-b.year}); */
+	/* for (var i = 0; i < points2.length; i++) {
+		alert(points2[i]);
+	} */
+	/* for (var int = 0; int < points2.length; int++) {
+		var array_element = points2[int];
+		alert(array_element);
+	} */
+	for ( var i in points2) {
+		console.log(points2[i]);
+	}
+	
+	
+	document.getElementById("demo").innerHTML = points[0].type+"<br>"+points[1].type+"<br>"+points[2].type;
+}
+</script>	
+</head>
+<body>
+	<button onclick="aaa();">Try it</button>
+	<p id="demo"></p>
+</body>
+</html>

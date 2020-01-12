@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function loadXMLDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var response = this.responseXML;	
+      var size = response.getElementsByTagName("title").length;
+      var html1 = "";
+      for (var i = 0; i < size; i++) {
+		var title = response.getElementsByTagName("title")[i].innerHTML;
+		html1 += title+"</br>" 
+	}
+      document.getElementById("demo").innerHTML = html1;
+     
+    }
+  };
+  xhttp.open("GET", "hhh.xml", true);
+  xhttp.send();
+}
+</script>
+</head>
+<body>
+<button onclick="loadXMLDoc();">click me</button>
+<p id="demo"></p>
+</body>
+</html>

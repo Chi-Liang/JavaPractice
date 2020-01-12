@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script >
+var x = 10;
+var obj = {
+  x: 20,
+  f: function(){
+    console.log(this.x);
+    var that = this; //使用that保留在這個函式內的this
+    var foo = function(){ console.log(this.x); } //使用that取得obj
+    foo();
+  }
+};
+
+obj.f();	
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

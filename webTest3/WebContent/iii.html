@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function run(){
+	var d = document.getElementById("demo").getElementsByTagName("div");
+//	var c = d.getElementsByTagName("div");
+	var i ; 
+	for(i=0;i<d.length;i++){
+		d[i].style.color="red";
+		console.log(d[i].innerHTML);
+	}
+}
+</script>
+</head>
+<body>
+	<button onclick="run();">click me</button>
+	<div id="demo">
+		<div>Choice</div>
+		<div>There</div>
+		<div>Because</div>
+	</div>
+</body>
+</html>

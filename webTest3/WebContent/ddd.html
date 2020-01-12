@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function aaa(){
+	var browser = {
+		//	aaa:navigator.userAgent,
+		//	bbb:navigator.appVersion,	
+			
+			versions : function (){
+				var u = navigator.userAgent;				
+				var app = navigator.appVersion;
+				return {
+					 trident : u.indexOf('Trident') > -1, //IE內核
+			         presto : u.indexOf('Presto') > -1, //opera內核
+			         gecko : u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐內核
+			            
+			            //Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0
+			            
+			         webApp : u.indexOf('Safari') == -1, //apple Safari         
+			         webKit : u.indexOf('Chrome') > -1, //蘋果、谷歌內核
+
+			         mobile : (!!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/) || !!u.match(/BlackBerry/)
+								           || !!u.match(/Windows Phone/)) && (!u.match(/Chrome/))
+								//是否為移動終端,若是黑莓機或是windows phone則用'BlackBerry','Windows Phone'
+					
+				};
+			}()
+	};
+	
+	var ie_Version= browser.versions.trident;
+	var opera_Version= browser.versions.presto;
+	var firefox_Version= browser.versions.gecko;
+	var safari_Version= browser.versions.webApp;
+	var chrome_Version= browser.versions.webKit;
+
+	var mobile_Version= browser.versions.mobile;   
+	var userAgent= navigator.userAgent; 
+	
+	if(!!mobile_Version){
+	    document.write("屬於mobile平台:");
+	   // window.location = 'm.taiwanmobile.com';
+	  }else if(!mobile_Version){
+	  
+	        if(!!ie_Version){
+	          document.write("屬於PC IE平台:");
+	        }
+	        else if(!!opera_Version){
+	          document.write("屬於PC opera平台:");
+	        }
+	        else if(!!firefox_Version){
+	          document.write("屬於PC firefox平台:");
+	        }
+	        else if(!!safari_Version){
+	          document.write("屬於PC safari平台:");
+	        }
+	        else if(!!chrome_Version){
+	          document.write("屬於PC chrome平台:");
+	        }
+	}
+}	
+/*
+var ie_Version= browser.versions.trident;
+var opera_Version= browser.versions.presto;
+var firefox_Version= browser.versions.gecko;
+var safari_Version= browser.versions.webApp;
+var chrome_Version= browser.versions.webKit;
+
+var mobile_Version= browser.versions.mobile;   
+var userAgent= navigator.userAgent; 
+
+if(!!mobile_Version){
+    document.write("屬於mobile平台:");
+   // window.location = 'm.taiwanmobile.com';
+  }else if(!mobile_Version){
+  
+        if(!!ie_Version){
+          document.write("屬於PC IE平台:");
+        }
+        else if(!!opera_Version){
+          document.write("屬於PC opera平台:");
+        }
+        else if(!!firefox_Version){
+          document.write("屬於PC firefox平台:");
+        }
+        else if(!!safari_Version){
+          document.write("屬於PC safari平台:");
+        }
+        else if(!!chrome_Version){
+          document.write("屬於PC chrome平台:");
+        }
+}
+*/
+</script>
+</head>
+<body onload="aaa();">
+
+</body>
+</html>

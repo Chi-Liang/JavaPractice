@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function aaa(){
+	var text="";
+	var person = {fname:"John",lname:"Doe",age:50};
+	
+	for (var i = 0; i < person.length; i++) {
+		
+	}
+	for ( var i in person) {
+		console.log(i);
+		text+=person[i]+" ";
+	}
+	
+	
+	document.getElementById("demo").innerHTML=text;
+}
+</script>
+</head>
+<body onload="aaa();">
+<p id="demo"></p>
+</body>
+</html>

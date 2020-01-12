@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function printValue(){
+	document.getElementById("result1").innerHTML=document.getElementById("number").value;
+	
+	let numberText = document.getElementById("number");
+	let numbetIndex = numberText.selectedIndex;
+	
+	document.getElementById("result2").innerHTML=numberText.options[numbetIndex].text;
+}
+</script>
+</head>
+<body>
+<div style="margin: 30px;float: left;">
+<select name="number" id="number" style="font-size: 26px" onchange="printValue();">
+	<option value="1">一</option>
+	<option value="2">二</option>
+	<option value="3">三</option>
+	<option value="4">四</option>
+	<option value="5">五</option>
+</select>
+</div>
+<label style="margin: 30px;float: left; font-size: 26px;">這是text</label>
+<div id="result1" style="margin: 30px;float: left;font-size: 26px;"></div>
+
+<label style="margin: 30px;float: left; font-size: 26px;">這是value</label>
+<div id="result2" style="margin: 30px;float: left;font-size: 26px;"></div>
+</body>
+</html>

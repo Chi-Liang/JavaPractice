@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function aaa() {
+		var a1Val = document.getElementById("a1").value;
+		var b1Val = document.getElementById("b1").value;
+		if (a1Val.trim() == "" && a1Val.trim().length == 0) {
+			alert("a1 is empty");
+			return false;
+		}
+		if (b1Val == "") {
+			alert("b1 is empty");
+			return false;
+		}
+
+		var flag1 = isNaN(a1Val);
+		var flag2 = isNaN(b1Val);
+		var flag3 = false;
+
+		if (flag1) {
+			//alert("a1 input error");
+			//document.getElementById("a1").value = "";
+			cleanFiled("a1");
+			flag3 = true;
+		}
+		if (flag2) {
+			//alert("b1 input error");
+			//document.getElementById("b1").value = "";
+			cleanFiled("b1");
+			flag3 = true;
+		}
+		if (flag3 == true) {
+			return false;
+		}
+		alert("pass");
+	}
+	function bbb() {
+		var aaa;
+		if (aaa == undefined) {
+			alert("Have no init value");
+		}
+	}
+	function cleanFiled(id) {
+		alert(id + "input error");
+		document.getElementById(id).value = "";
+		document.getElementById(id).focus();
+	}
+</script>
+</head>
+<body onload="bbb();">
+	<input type="text" id="a1" /> +
+	<input type="text" id="b1" />
+	<button onclick="aaa();">相加</button>
+</body>
+</html>

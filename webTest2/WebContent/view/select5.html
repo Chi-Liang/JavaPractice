@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var items1 = [
+	["國語","Chinese"],
+	["英語","English"]
+];
+
+var items21 = [
+	["張學友","oil"],
+	["張惠妹","sister"]
+];
+
+var items22 = [
+	["Michael","MichaelValue"],
+	["Celine","CelineValue"]
+];
+
+var items31 = [
+	["我等到花兒也謝了","flower"],
+	["一千個傷心的理由","reason"],
+	["咖啡","coffee"]
+];
+
+var items32 = [
+	["聽海","ocean"],
+	["剪愛","love"],
+	["三天三夜","three"]
+];
+
+var items33 = [
+	["Beat It","BeatItValue"],
+	["Billie Jean","BillieJeanValue"]
+];
+
+var items34 = [
+	["My Heart Will Go On","goOnValue"],
+	["Hope","HopeValue"]
+];
+
+function initOption(){
+	
+	let type1Id = "type1Id";
+	let type2Id = "type2Id";
+	let selectedValue1 = "英語";
+	let selectedValue2 = "Celine";
+	
+	initOption1(items1,type1Id);
+	initOption1(items22,type2Id);
+	
+	initSelectValue(selectedValue1,type1Id);
+	initSelectValue(selectedValue2,type2Id);
+	
+}	
+
+function initSelectValue(selectedValue,type){
+	let obj = document.getElementById(type);
+	let text = "";
+	let  i = 0;
+	for (i = 0; i < obj.length; i++) {
+		text = obj.options[i].text;
+		if(text==selectedValue){
+			document.getElementById(type).selectedIndex = i;
+			break;
+		}
+	}
+}
+
+function initOption1(items,typeId){
+	let obj = document.getElementById(typeId);
+	for ( let val in items) {
+		console.log(val);
+		obj.add(new Option(items[val][0],items[val][1]));
+	}
+}
+
+function removeLayer2(){
+	var obj = document.getElementById("type2Id");
+	obj.options.length = 0;
+}
+
+function removeLayer3(){
+	var obj = document.getElementById("type3Id");
+	obj.options.length = 0;
+}
+
+function changeLayer2(){
+	removeLayer2();
+	removeLayer3();
+	let typeId = document.getElementById("type1Id").value;
+	let type2Id = "type2Id";
+	const Chinese="Chinese",English="English";
+	
+	switch (typeId) {
+	case Chinese:
+		initOption1(items21, type2Id);
+		break;
+	case English:
+		initOption1(items22, type2Id);
+		break;
+	
+	}
+	
+}
+
+function changeLayer3(){
+	removeLayer3();
+	let typeId = document.getElementById("type2Id").value;
+	let type3Id = "type3Id";
+	const oil="oil",sister="sister",MichaelValue="MichaelValue",CelineValue="CelineValue";
+	
+	switch (typeId) {
+	case oil:
+		initOption1(items31, type3Id);
+		break;
+	case sister:
+		initOption1(items32, type3Id);
+		break;
+	case MichaelValue:
+		initOption1(items33, type3Id);
+		break;
+	case CelineValue:
+		initOption1(items34, type3Id);
+		break;
+	}
+	
+}
+
+</script>
+</head>
+<body onload="initOption();">
+<div style="margin: 30px;float: left;">
+	<select name="type1Name" id="type1Id" style="font-size: 26px;" size="3" onchange="changeLayer2();">
+	</select>
+</div>
+<div style="margin: 30px;float: left;">
+	<select name="type2Name" id="type2Id" size="3" style="font-size: 26px;" onchange="changeLayer3();">
+	</select>
+</div>
+<div style="margin: 30px;float: left;">
+	<select name="type3Name" id="type3Id" size="3" style="font-size: 26px;">
+	</select>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var aa = ["星期一","星期二","星期三","星期四","星期五","星期六","星期日"];
+
+function bbb(){
+	
+	for (var i = 0; i < aa.length; i++) {
+		var para = document.createElement("button");
+		var node = document.createTextNode(aa[i]);
+		para.setAttribute("onClick","cc('"+aa[i]+"')");
+		para.appendChild(node);
+		document.getElementById("tt").appendChild(para);
+		
+		var para1 = document.createElement("p");
+		document.getElementById("tt").appendChild(para1);
+	}
+	
+}  
+
+function cc(iii){
+	alert(iii);
+}
+</script>
+</head>
+<body onload="bbb();">
+<div id="tt"></div>
+</body>
+</html>

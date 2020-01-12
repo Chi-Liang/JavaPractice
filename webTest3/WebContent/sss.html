@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function aaa(){
+	var para = document.createElement("p");
+	var node = document.createTextNode("This is new");
+	para.appendChild(node);
+	document.getElementById("div1").appendChild(para);
+}
+</script>
+</head>
+<body onload="aaa();">
+<div id="div1">
+	<p id="p1">one</p>
+	<p id="p2">two</p>
+</div>
+</body>
+</html>
