@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function aaa(){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	        showResult(xhttp.responseXML);
+	    }
+	};
+	xhttp.open("GET", "books.xml", true);
+	xhttp.send(); 
+}
+
+function showResult(xml) {
+    var txt = "";
+//  var path = "/bookstore/book/title";
+//  var path = "/bookstore/book[1]/title";
+    var path = "/bookstore/book[price>35]/price";
+    if (xml.evaluate) {
+        var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+        var result = nodes.iterateNext();
+        while (result!=null) {
+            txt += result.childNodes[0].nodeValue + "<br>";
+            result = nodes.iterateNext();
+        } 
+    // Code For Internet Explorer
+    } else if (window.ActiveXObject || xhttp.responseType == "msxml-document") {
+        xml.setProperty("SelectionLanguage", "XPath");
+        nodes = xml.selectNodes(path);
+        for (i = 0; i < nodes.length; i++) {
+            txt += nodes[i].childNodes[0].nodeValue + "<br>";
+        }
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
+</head>
+<body onload="aaa();">
+<p id="demo"></p>
+</body>
+</html>

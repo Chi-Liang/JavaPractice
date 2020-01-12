@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function aaa(){
+	document.getElementById("demo").innerHTML = "更新後";
+}
+
+//測試reload
+function bbb(){
+	debugger;
+}
+</script>
+</head>
+<body onload="bbb();">
+<p id="demo">更新前</p>
+<button onclick="aaa();">更新</button>
+</body>
+</html>

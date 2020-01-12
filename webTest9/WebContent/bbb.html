@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function aaa(){
+	var num = Math.ceil(Math.random()*10);
+	var gnum = prompt("Guess the number between 1 and 10 inclusive");
+	var r = /^\+?[1-9][0-9]*$/;
+	var flag = r.test(gnum);
+
+	if(!flag){
+		alert("輸入非正整數,請重新輸入");
+		return;
+	}
+	if(gnum>11){
+		alert("輸入數字非1~10,請重新輸入");
+		return;
+	}
+	if(gnum==num){
+		alert("Mathed");
+	}else{
+		alert("Not matched");
+	}
+
+}
+</script>
+</head>
+<body onload="aaa();">
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var r = /^\+?[1-9][0-9]*$/;
+
+
+function multipleBy(){
+	var num1 = document.getElementById("firstNumber").value;
+	var num2 = document.getElementById("secondNumber").value;
+	var returnFlag = checkNum(num1,num2);
+	if(returnFlag == false){
+		alert("輸入非正整數,請重新輸入");
+		document.getElementById("firstNumber").value = "";
+		document.getElementById("secondNumber").value = "";
+	}else{
+		document.getElementById("result").innerHTML = num1*num2;
+	}
+	
+}
+
+function divideBy(){
+	var num1 = document.getElementById("firstNumber").value;
+	var num2 = document.getElementById("secondNumber").value;
+	document.getElementById("result").innerHTML = num1/num2;
+}
+
+function checkNum(num1,num2){
+	var flag1 = r.test(num1);
+	var flag2 = r.test(num2);
+	if(flag1 && flag2){
+		return true;
+	}else{
+		return false;
+	}
+}
+</script>
+</head>
+<body>
+first number:<input type="text" id="firstNumber"/></br>
+second number:<input type="text" id="secondNumber"/></br>
+<button onclick="multipleBy();">Multiply</button>
+<button onclick="divideBy();">Divide</button>
+<div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function loadDoc() {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	      document.getElementById("demo").innerHTML =
+	      this.responseText;
+	    }
+	  };
+	  xhttp.open("GET", "https://reqres.in/api/users?page=2", true);
+	  xhttp.send();
+	}
+
+function aaa(){
+	debugger;
+}
+</script>
+</head>
+<body onload="aaa();">
+<div id="demo">
+<h1>The XMLHttpRequest Object</h1>
+<button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+</body>
+</html>
