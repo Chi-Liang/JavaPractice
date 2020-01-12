@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+        http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+    <!-- Spring Quartz -->
+    <!--集成方式：MethodInvokingJobDetailFactoryBean，並且任務類別，是需要繼承QuartzJobBean-->
+    <!--定義jobDetail-->
+    <bean name="schedulingJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <property name="jobClass" value="quartz.quartzTest.SpringQuartzJobDemo"/>
+        <property name="durability" value="true" />        
+    </bean>
+ 
+    <!--定義Trigger觸發器: cronExpression 表達式的格式：秒 分 時 日 月 周 年(可選)-->
+    <bean id="triggerJob" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="schedulingJob"/>
+        <property name="cronExpression" value="*/5 * * * * ?" />
+    </bean>
+ 
+        <!--定義核心調度器-->
+    <bean id="scheduleController" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="true">
+        <property name="schedulerName" value="monitorScheduler"/>
+        <property name="triggers">
+            <list>            
+                 <ref bean="triggerJob"/>
+            </list>                
+        </property>
+    </bean>
+
+    
+</beans>
