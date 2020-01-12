@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd" >
+<struts>
+<package name="form" extends="struts-default">
+
+		<global-results>
+			<result name="login">login.jsp</result>
+		</global-results>
+		
+		<action name="loginPerson" class="struts2Project.LoginAction">
+			<result name="success">success.jsp</result>
+		</action>
+		
+		<action name="hello" class="struts2Project.HelloAction">
+			<result name="OK">index.jsp</result>
+		</action>
+		
+		<action name="*Book" class="struts2Project.BookAction" method="{1}">
+		    <result>successBook.jsp</result>
+			<result name="{1}">{1}Book.jsp</result>
+			<result name="input">initAddBook.jsp</result>
+			<result name="list">listBook.jsp</result>
+			
+			<allowed-methods>initAdd,add,list,clear</allowed-methods>
+		</action>
+		
+	</package>
+</struts>
