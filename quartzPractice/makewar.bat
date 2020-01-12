@@ -1,0 +1,2 @@
+jar cvf depo.war .
+
