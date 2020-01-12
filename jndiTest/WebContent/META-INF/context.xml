@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="50" maxWait="5000" maxldle="10" name="npDS" password="2526abcd" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/mvcpractice" username="root"/> 
+    <ResourceLink global="npDS" name="npDS" type="javax.sql.DataSource"/> 
+    
+    <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="50" maxWait="5000" maxldle="10" name="W9011921" password="9999" type="javax.sql.DataSource" url="jdbc:mysql://philips:3306/test" username="klc"/> 
+    <ResourceLink global="W9011921" name="W9011921" type="javax.sql.DataSource"/> 
+</Context>
