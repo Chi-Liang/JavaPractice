@@ -1,0 +1,528 @@
+html,body{
+    width: 100%;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.my-formstyle .input-group {
+    border-radius: 4px;
+    overflow: hidden;
+    opacity: .85;
+}
+.my-formstyle .input-group-prepend{
+    width: 38px;
+}
+.my-formstyle .input-group-prepend, .my-formstyle .input-group-text{
+    background-color: #f9f6f4;
+    border: none;
+}
+.my-formstyle .input-group-text {
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.my-formstyle .form-control {
+    border: none;
+    background-color: #f9f6f4;
+    padding-left: 0;
+    font-size: 14px;
+    color: #6b4e1e;
+}
+
+.my-btn {
+    font-size: 18px;
+    background-image: url('../images/btn-bg.png');
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    border-radius: 4px;
+    border: 1px solid #6b4e1e;
+    color: #000;
+    overflow: hidden;
+    transition: all .25s;
+}
+.my-btn:hover {
+    background-image: none;
+    background-color: #b2b1ad;
+    color: #FFF;
+}
+
+/* header */
+.header .navbar {
+    background-color: #b58654;
+    padding: .8rem 1rem;
+}
+.header .nav-link{
+    font-weight: 500;
+    color: #FFF;
+    transition: color .25;
+}
+.header .nav-link:hover {
+    color: rgba(255,255,255,.5);
+}
+.header .navbar-toggler{
+    color: #FFF;
+    font-size: 24px;
+    border: none;
+}
+/* main */
+.page-nav-item {
+    display: block;
+    color: #434343;
+    margin: 15px 0;
+    text-decoration: none!important;
+    transition: color .25s;
+}
+.page-nav-item:hover {
+    color: #b58654;
+}
+.page-nav-item .icon {
+    font-size: 20px;
+    margin-right: 5px;
+}
+.page-nav-item:first-child{
+    margin-top: 0;
+}
+
+
+/* login page */
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../images/login-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+}
+.login-box{
+    width: 90vw;
+    max-width: 400px;
+    /* max-height: 400px; */
+    background-color: #e6ddd6;
+    padding: 40px 30px;
+    margin: auto;
+}
+.login-inner{
+    border-radius: 4px;
+    padding: 20px 20px;
+    background-image: url('../images/inner-patten.png');
+    margin-top: 30px;
+    position: relative;
+}
+.login-inner .title {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #FFF;
+    border-bottom: 2px dotted rgba(0,0,0,.15);
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+.login-inner .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-image: url('../images/inner-patten.png');
+    color: #e6ddd6;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+}
+
+
+/* - footer - */
+.footer {
+    min-height: 68px;
+    background: rgb(150,112,71);
+    background: linear-gradient(270deg, rgba(150,112,71,1) 0%, rgba(231,184,134,1) 100%);
+    font-size: 15px;
+    padding: 1rem 1rem;
+}
+.footer a,.footer {
+    color: #FFF;
+}
+.footer ul {
+    margin-bottom: 5px;
+}
+.footer li {
+    border-right: 1px solid rgba(255,255,255,.5);
+    padding-right: 20px;
+    margin-right: 20px;
+}
+.footer li:last-child{
+    border: none;
+    padding-right: 0;
+    margin-right: 0;
+}
+.copyright {
+    font-size: 14px;
+}
+
+.social .icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all .25s;
+}
+.social li {
+    border: none;
+    padding: 0 5px;
+}
+.social-fb {
+    background-image: url('../images/facebook.png');
+}
+.social-mail {
+    background-image: url('../images/line.png');
+}
+.social-yt {
+    background-image: url('../images/youtube.png');
+}
+.social-fb:hover {
+    background-image: url('../images/facebook-hover.png');
+}
+.social-mail:hover {
+    background-image: url('../images/line-hover.png');
+}
+.social-yt:hover {
+    background-image: url('../images/youtube-hover.png');
+}
+.page-content{
+    
+}
+.videobox {
+    width: 100%;
+}
+.videobox iframe {
+    width: 100%;
+    height: 60vh;
+}
+.videotitle,.note-text {
+    background-color: #f3f0e8;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.videotitle .title {
+    font-size: 22px;
+}
+.videotitle .subtitle {
+    font-size: 18px;
+    font-weight: 400;
+}
+.note-text p {
+    margin-bottom: 0;
+}
+
+.title-row {
+    border-bottom: 1px solid #b58654;
+    margin-bottom: 20px;
+}
+.title-row .title {
+    display: inline-block;
+    border-bottom: 4px solid #b58654;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+}
+
+
+.privacy {
+    font-weight: 300;
+    line-height: 2;
+}
+
+.bannerPoster {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: .25s;
+}
+.bannerPoster.active {
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+}
+
+.bannerPoster .close-btn{
+    cursor: pointer;
+    font-size: 30px;
+    color: #FFF;
+    position: absolute;
+    top: 20px;
+    right: 20px;   
+    z-index: 9999;
+}
+
+.slick-arrow{
+    width: 30px;
+    height: 30px;
+}
+.slick-next{
+    right: -50px;
+}
+.slick-prev{
+    left: -50px;
+}
+
+.ad-btn{
+    cursor: pointer;
+    background-color: #fff;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 99999;
+    padding: 10px;
+}
+
+.bannerPage {
+    position: relative;
+    height: auto;
+}
+.bannerPage.full{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.bannerPage.full .slider {
+    width: 100vw;
+    height: 100vh;
+}
+.bannerPage.full .bannerPage_control{
+    bottom: 40px;
+}
+.bannerPage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.bannerPage_control {
+    position: absolute;
+    bottom: 40px;
+    right: 20px;
+}
+.bannerPage_control ul {
+    margin-bottom: 0;
+}
+.bannerPage_control ul li {
+    margin: 0!important;
+    float: left;
+}
+.bannerPage_control .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0 5px;
+    background-color: rgba(0,0,0,0.7);
+    color: #FFF;
+    position: relative;
+    border-radius: 0;
+}
+.bannerPage_control .btn i {
+    position: relative;
+}
+.bannerPage_control #pause_btn::before {
+    content: '';
+    width: 0;
+    height: calc(100% + 2px);
+    background-color: #b58654;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    z-index: 0;
+}
+
+.download-btn {
+    display: inline-flex;
+    width: 250px;
+    transition: .25s;
+}
+.download-btn:hover{
+    opacity: .8;
+}
+
+.contact-text a{ 
+    text-decoration: none!important;
+    color: #606060;
+}
+
+@keyframes pause_acitve {
+    from {
+        width: 0;
+    } to {
+        width: calc(100% + 2px);
+    }
+}
+
+.bannerPage_control #pause_btn.go::before {
+    animation-name: pause_acitve;
+    animation-duration: 4.5s;
+    animation-iteration-count: infinite;
+}
+.bannerPage_control .btn.active{
+    display: none;
+}
+@media (min-width: 1199px) {
+    .bannerPage_control {
+        position: absolute;
+        bottom: 20px;
+    }
+}
+@media (min-width: 768px) {
+    .login {
+        background-size: 130% auto;
+    }
+    .warpper {
+        height: calc(100vh - (72px * 2));
+        overflow: hidden;
+    }
+    .bd-sidebar {
+        border-right: 2px dotted rgba(0,0,0,0.2);
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        height: calc(100vh - (72px * 2));
+        overflow-y: auto;
+    }
+    body.page {
+        min-height: 100vh;
+        overflow-y: hidden;
+    }
+    #pageNav {
+        display: block!important;
+    }
+    .footer{
+        position: relative;
+    }
+    .social {
+        position: absolute;
+        right: 25px;
+        bottom: 10px;
+    }
+    .page-content,.banner-content {
+        width: 100%;
+        height: calc(100vh - (72px * 2));
+        overflow-y: auto;
+        padding-bottom: 100px!important;
+        padding-right: 14vw!important;
+    }
+    .banner-content {
+        padding-bottom: 20px!important;
+        padding-right: 0!important;
+    }
+    .bannerPage {
+        height: calc(100vh - 144px);
+        overflow: hidden;
+    }
+    .Poster-item {
+        width: 980px;
+    }
+    .Poster-item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+@media (max-width: 767px) { 
+    .header {
+        min-height: 68px;
+    }
+    .header .navbar-brand {
+        margin-left: 15px;
+    }
+    .header .navbar {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .header .navbar-nav  {
+        background-color: #f9f6f4;
+        /* height: calc(100vh - 75px); */
+        margin-top: 15px;
+        margin-bottom: -15px;
+        padding: 15px;
+    }
+    .header .nav-link{ 
+        font-size: 20px;
+        color: #b58654;
+    }
+    .header .nav-link{
+        text-align: center;
+    }
+    .page-nav-item:hover,.page-nav-item:hover a,.header .nav-link:hover {
+        color: #000;
+    }
+    .title-row .title {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+    .login-box {
+        padding: 30px 10px;
+    }
+    .social {
+        margin: 10px 0;
+    }
+    .page-mobileNav{
+        width: calc(100% - 10px);
+        border: 1px solid #ccc;
+        justify-content: space-between;
+        margin: 10px 5px;
+        padding: 5px 14px;
+    }
+    .page-content {
+        padding-bottom: 80px;
+    }
+    .warpper {
+        min-height: calc(100vh - (68px + 228px))
+    }
+    #pageNav {
+        width: calc(100% + 30px);
+        height: calc(100vh - 68px);
+        background-color: #FFF;
+        margin: 0 -15px;
+        padding: 0 29px;
+        z-index: 99999;
+        position: absolute;
+        z-index: 9999;
+        overflow-x: hidden;
+        left: 0;
+        top: 56px;
+        overflow-y: auto;
+    }
+    .login-box{
+        margin-top: -100px;
+    }
+    .bannerPage_control{
+        bottom: 10px;
+        right: 10px;
+    }
+    .bannerPage_control .btn {
+        width: 30px;
+        height: 30px;
+    }
+}

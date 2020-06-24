@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-hunt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>房多多</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- font-icon -->
+    <link rel="stylesheet" href="css/fonts/css/fontello.css">
+    <link rel="stylesheet" href="css/lightcase.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/lightcase.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+        	invalidateSession();
+            $('a[data-rel^=lightcase]').lightcase();
+            $("#login").click(function(){
+        			var userName = $("#userName").val();
+        			var userPassword = $("#userPassword").val();
+        		    $.ajax({
+        		          type :"GET",
+        		          url  : "https://app.hanye.com.tw/pl-admin/api/member/check",
+        		     		data : { 
+        		     			mid : userName,
+        		     			pwd : userPassword
+        			        }, 
+        		          success : function(data) {
+        		          	if(data.loginResult == "Y"){
+        		          		myFunction();
+        		          	}else{
+        		          		alert("姓名或密碼輸入錯誤");
+        		          		$("#userName").val("");
+        		    			$("#userPassword").val("");
+        		          		$( "#userName" ).focus();
+        		          	}
+        		      	},
+        		      	error : function(xhr,ajaxOption,error) {
+        		      		alert(xhr.responseText);
+        		      	}
+        		    }) 
+            });
+        });
+        
+        function myFunction() {
+			var userName = $("#userName").val();
+			$("#fname").val(userName);
+			$("#myForm").submit();
+		}
+        
+    </script>
+   
+</head>
+<body>
+    <main class="login">
+        <form id="myForm" action="/fundodo/LoginServlet" method="post">
+            <div class="login-box">
+                <div class="container">
+                    <div class="logo">
+                        <img class="img-fluid" src="images/logo-full.png" alt="logo">
+                    </div>
+                    <div class="login-inner">
+                        <div class="title">Login</div>
+                        <div class="icon"><i class="icon-lock"></i></div>
+                        <div class="my-formstyle mb-4">
+                            <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <img class="img-fluid" src="images/user.jpg" alt="icon">
+                                </div>
+                                </div>
+                                <input id="userName" type="text" class="form-control" placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="my-formstyle mb-4">
+                            <label class="sr-only" for="inlineFormInputGroupUsername">password</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <img class="img-fluid" src="images/key.jpg" alt="icon">
+                                    </div>
+                                    </div>
+                                <input id="userPassword" type="password" class="form-control" placeholder="password">
+                            </div>
+                        </div>
+
+                        <button id="login" type="button" class="btn my-btn mb-2 w-100">登 入</button>
+                    </div>
+                </div>
+            </div>
+              <input type="text" id="fname" name="lname" style="display: none;" ><br>
+        </form>
+    </main>
+    
+</body>
+</html>
